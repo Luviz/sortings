@@ -14,7 +14,7 @@ public class Qiucksort {
 		newT 	= new ArrayList<T>();
 		
 		if (!t.isEmpty()){
-			piv = t.get(0);
+			piv = t.get(t.size()/2);
 			for (T a: t){
 				if (0<((Comparable<T>) piv).compareTo(a)){ //left
 					left.add(a);
@@ -22,11 +22,13 @@ public class Qiucksort {
 					right.add(a);
 				}
 			}
+			System.out.println(t.toString());
 			System.out.println(left.toString());
 			System.out.println(right.toString());
+			System.out.println(t.size()>3);
 			System.out.println("----");
-			if (left.isEmpty() && right.isEmpty()){
-				return null;
+			if (left.isEmpty() || right.isEmpty()){
+				return new ArrayList<>();
 			}else if (right.isEmpty()){
 				//right = sortting(right);
 				System.out.println("left");

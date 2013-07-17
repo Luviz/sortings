@@ -6,7 +6,7 @@ public class Qiucksort {
 
 	@SuppressWarnings({ "unchecked", "null" })
 	static public <T> ArrayList<T> sortting(ArrayList<T> t){
-		System.out.print("-");
+		//System.out.print("-");
 		T piv;
 		ArrayList<T> left ,right ,newT;
 		left	= new ArrayList<T>();

@@ -45,8 +45,8 @@ public class DuledubelEged<T>{
 					etot = (100*(System.currentTimeMillis()-tStart))/i;
 					System.out.println(i+"%\t\t- "+ (tStop -tStart)/1000 + "\t ETA: "+ (etot- tStop +tStart)/1000);
 				}
-			}
-		}*/
+			}*/
+		}
 		return t;
 	}
 }

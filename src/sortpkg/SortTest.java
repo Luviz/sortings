@@ -16,7 +16,7 @@ public class SortTest {
 		System.out.println("Start");
 		Random rand = new Random(123);
 		ArrayList<Integer> numbers = new ArrayList<Integer>();
-		for(int i =0; i < 50; i ++){
+		for(int i =0; i < 100000000; i ++){
 			numbers.add(rand.nextInt(50));
 		}
 		System.out.println();
@@ -28,13 +28,16 @@ public class SortTest {
 		long start = System.currentTimeMillis();
 		ArrayList<Integer> t = Qiucksort.sortting(numbers);
 		long stop = System.currentTimeMillis();
-		System.out.println("---------------------//-------------------");
-		System.out.println(t.toString());
+		//System.out.println("---------------------//-------------------");
+		//System.out.println(t.toString());
 		for (int i = 0 ; i<10; i++ ){
 			System.out.print(t.get(i)+" ");
 		}
-		
-		System.out.println("...");
+		System.out.print("... ...");
+		for (int i = t.size()-20 ; i<t.size(); i++ ){
+			System.out.print(t.get(i)+" ");
+		}
+		System.out.println(t.size());
 		
 		System.out.println("\n"+(stop - start)/1000);
 		System.out.println("done");

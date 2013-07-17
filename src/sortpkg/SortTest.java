@@ -26,16 +26,15 @@ public class SortTest {
 		System.out.println("sorting...");
 		//DuledubelEged<Integer> d = new DuledubelEged<>();
 		long start = System.currentTimeMillis();
-		Object[] t = Qiucksort.sortting(numbers).toArray();
+		ArrayList<Integer> t = Qiucksort.sortting(numbers);
 		long stop = System.currentTimeMillis();
-
+		System.out.println("---------------------//-------------------");
+		System.out.println(t.toString());
 		for (int i = 0 ; i<10; i++ ){
-			System.out.print(t[i]+" ");
+			System.out.print(t.get(i)+" ");
 		}
+		
 		System.out.println("...");
-		for (int i = t.length-20 ; i<t.length; i++ ){
-			System.out.print(t[i]+" ");
-		}
 		
 		System.out.println("\n"+(stop - start)/1000);
 		System.out.println("done");

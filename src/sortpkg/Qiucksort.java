@@ -14,47 +14,37 @@ public class Qiucksort {
 		newT 	= new ArrayList<T>();
 		
 		if (!t.isEmpty()){
+			//System.out.println("0:"+t);
 			piv = t.get(t.size()/2);
-			for (T a: t){
-				if (0<((Comparable<T>) piv).compareTo(a)){ //left
-					left.add(a);
+			for (int i =0; i < t.size(); i++){
+				if (0 < ((Comparable<T>) piv).compareTo(t.get(i))){ //left
+					left.add(t.get(i));
+					//System.out.print(" L: "+ t.get(i));
 				}else{	//right
-					right.add(a);
+					//System.out.println(" R: "+ t.get(i));
+					right.add(t.get(i));
 				}
 			}
-			System.out.println(t.toString());
-			System.out.println(left.toString());
-			System.out.println(right.toString());
-			System.out.println(t.size()>3);
-			System.out.println("----");
+			/*System.out.println("0left: "+left + " "+ left.size());
+			System.out.println("0right: "+right+ " "+ right.size());*/
+			
 			if (left.isEmpty() || right.isEmpty()){
-				return new ArrayList<>();
-			}else if (right.isEmpty()){
-				//right = sortting(right);
-				System.out.println("left");
-				left = sortting(left);
 				newT.addAll(left);
-				newT.add(piv);
 				newT.addAll(right);
-			}else if (left.isEmpty()){
-				System.out.println("right");
-				right = sortting(right);
-				//left = sortting(left);
-				newT.addAll(left);
-				newT.add(piv);
-				newT.addAll(right);
-			}else{
-				System.out.println("x2");
+				return newT;
+			}else {
+				//System.out.println("\t\t"+ right.isEmpty() + " "+left.isEmpty());
 				right = sortting(right);
 				left = sortting(left);
+				
 				newT.addAll(left);
-				newT.add(piv);
 				newT.addAll(right);
 			}
-						
+			/*System.out.println("left: "+left);
+			System.out.println("right: "+right);
+			System.out.println("newT: "+newT+" " +newT.size()+"\n-----------------\n\n");	*/	
 			return newT;
 		}
-		//System.out.println("b");
 		return null;
 		
 	}

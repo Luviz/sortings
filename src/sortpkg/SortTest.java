@@ -16,29 +16,30 @@ public class SortTest {
 		System.out.println("Start");
 		Random rand = new Random(123);
 		ArrayList<Integer> numbers = new ArrayList<Integer>();
-		for(int i =0; i < 100000000; i ++){
-			numbers.add(rand.nextInt(50));
+		for(int i =0; i < 25000000; i ++){
+			int nr = rand.nextInt(1000000);
+			//if (!numbers.contains(new Integer(nr))){
+				numbers.add(nr);
+			/*}else {
+				i--;
+			}*/
 		}
 		System.out.println();
-		/*for (Object a : numbers.toArray()){
-			System.out.print(a +" ");
-		}*/
+		
 		System.out.println("sorting...");
-		//DuledubelEged<Integer> d = new DuledubelEged<>();
 		long start = System.currentTimeMillis();
 		ArrayList<Integer> t = Qiucksort.sortting(numbers);
 		long stop = System.currentTimeMillis();
-		//System.out.println("---------------------//-------------------");
-		//System.out.println(t.toString());
 		for (int i = 0 ; i<10; i++ ){
 			System.out.print(t.get(i)+" ");
 		}
 		System.out.print("... ...");
-		for (int i = t.size()-20 ; i<t.size(); i++ ){
+		for (int i = t.size()-10 ; i<t.size(); i++ ){
 			System.out.print(t.get(i)+" ");
 		}
-		System.out.println(t.size());
+		System.out.println("\n"+t.size());
 		
+		System.out.println("\n"+(stop - start));
 		System.out.println("\n"+(stop - start)/1000);
 		System.out.println("done");
 	}

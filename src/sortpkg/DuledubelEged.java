@@ -20,12 +20,6 @@ public class DuledubelEged<T>{
 				//System.out.print(i+"-");
 			}
 //			System.out.println("-----------");
-			/*
-			System.out.println("\n------------------");
-			System.out.println(max +" " + min+"\t" + t[max]+" "+t[min]+"\t"+c);
-			System.out.println("------------------");
-			System.out.println(t[c]+" "+t[t.length-c-1]);
-			//*/
 			//swaping!
 			T temp = t[c];	//min
 			t[c] = t[min];

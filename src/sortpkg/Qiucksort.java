@@ -17,7 +17,7 @@ public class Qiucksort {
 			if (t.size()==1){		//Finish check	-> one elem is sorted
 				return t;
 			}		
-			piv = t.remove(t.size()/2);
+			piv = t.remove(0);
 			for (int i =0; i < t.size(); i++){			//sorting
 				if (0 < ((Comparable<T>) piv).compareTo(t.get(i))){ //left
 					left.add(t.get(i));

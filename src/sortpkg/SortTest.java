@@ -16,8 +16,9 @@ public class SortTest {
 		System.out.println("Start");
 		Random rand = new Random(123);
 		ArrayList<Integer> numbers = new ArrayList<Integer>();
-		for(int i =0; i < 25000000; i ++){
-			int nr = rand.nextInt(1000000);
+		int x = 200000;
+		for(int i =0; i < x; i ++){
+			int nr = rand.nextInt(x);
 			//if (!numbers.contains(new Integer(nr))){
 				numbers.add(nr);
 			/*}else {
@@ -28,19 +29,20 @@ public class SortTest {
 		
 		System.out.println("sorting...");
 		long start = System.currentTimeMillis();
-		ArrayList<Integer> t = Qiucksort.sortting(numbers);
+		//ArrayList<Integer> t = Qiucksort.sortting(numbers);		//quick sort
+		DuledubelEged.sorting(numbers.toArray());					//Cocktail-sort
 		long stop = System.currentTimeMillis();
-		for (int i = 0 ; i<10; i++ ){
+		/*for (int i = 0 ; i<10; i++ ){
 			System.out.print(t.get(i)+" ");
 		}
 		System.out.print("... ...");
-		for (int i = t.size()-10 ; i<t.size(); i++ ){
+		/*for (int i = t.size()-10 ; i<t.size(); i++ ){
 			System.out.print(t.get(i)+" ");
 		}
 		System.out.println("\n"+t.size());
-		
+		*/
 		System.out.println("\n"+(stop - start));
-		System.out.println("\n"+(stop - start)/1000);
+		System.out.println("\n"+(stop - start)/1000/60+":"+(stop - start)/1000%60+"."+(stop - start)%1000);
 		System.out.println("done");
 	}
 

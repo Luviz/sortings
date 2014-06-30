@@ -9,6 +9,7 @@ public class DuledubelEged<T>{
 		long etot =0; //Estimated tot time
 		while(c < t.length/2){
 			int min = t.length/2,max = t.length/2;
+			int count=0;
 			for (int i = c; i < t.length-c; i++){
 				//System.out.print(t[i]);
 				if (0<((Comparable<T>) t[min]).compareTo(t[i])){
@@ -17,7 +18,7 @@ public class DuledubelEged<T>{
 				if (0>((Comparable<T>) t[max]).compareTo(t[i])){
 					max = i;			//find max
 				}
-				//System.out.print(i+"-");
+				count++;
 			}
 //			System.out.println("-----------");
 			//swaping!
@@ -32,14 +33,20 @@ public class DuledubelEged<T>{
 			//System.out.println(t[c]+" "+t[t.length-c-1]);
 			
 			c++;
-			/*if (c == t.length/2*.1)
-				etot = (100*(System.currentTimeMillis()-tStart))/10;
-			right = sortting(right);right = sortting(right);right = sortting(right);right = sortting(right);right = sortting(right);right = sortting(right);int i =0; i < 100 ; i++){			if (c*100 == (t.length/2)*i){
+			
+			etot = (100*(System.currentTimeMillis()-tStart))/10;
+			for(int i =0; i < 100 ; i+=10){	
+				if (c*100 == (t.length/2)*i){
 					long tStop = System.currentTimeMillis();
 					etot = (100*(System.currentTimeMillis()-tStart))/i;
-					System.out.println(i+"%\t\t- "+ (tStop -tStart)/1000 + "\t ETA: "+ (etot- tStop +tStart)/1000);
+					long eta = (etot - tStop +tStart);
+					System.out.println(i+"%\t- "+ (tStop -tStart)/1000/60+":"+(tStop -tStart)/1000%60+"."+(tStop -tStart)%1000 + "\t " +
+							"ETA: "+eta/1000/60+":"+eta/1000%60+"."+eta%1000+"\t" +
+									"count: "+ count);
 				}
-			}*/
+			}
+			
+		
 		}
 		return t;
 	}

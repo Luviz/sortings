@@ -25,8 +25,8 @@ public class Qiucksort {
 					right.add(t.get(i));
 				}
 			}	
-			right	= sortting(right);	//sub sorting
-			left 	= sortting(left);
+			right= sortting(right);	//sub sorting
+			left = sortting(left);
 				
 			newT.addAll(left);		//building newT
 			newT.add(piv);
